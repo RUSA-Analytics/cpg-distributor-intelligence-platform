@@ -219,84 +219,18 @@ Measures distribution reach and market penetration.
 
 # Dataset Overview
 
-The platform uses enterprise-scale simulated data.
+The platform uses enterprise-scale simulated data, included in `Datasets.zip`.
 
-## Distributor Master
+| File | Contents | Records |
+|---|---|---:|
+| `distributors.csv` | Distributor ID, name, country, annual target | 300 |
+| `outlets.csv` | Outlet ID, name, type, distributor, country, region, city, status, monthly potential | 35,000 |
+| `products.csv` | Product ID, name, category, unit price | 150 |
+| `countries.csv` | Country ID, country, region | 18 |
+| `calendar.csv` | Date dimension | 365 |
+| `transactions.csv` | Date, product, outlet, distributor, country, region, quantity, unit price, revenue, cost, gross profit | 250,000 |
 
-Contains:
-
-- Distributor ID
-- Distributor Name
-- Region
-- Country
-- Distributor Type
-- Status
-
-Records:
-300
-
----
-
-## Outlet Master
-
-Contains:
-
-- Outlet ID
-- Outlet Name
-- Outlet Type
-- Country
-- City
-- Distributor
-
-Records:
-35,000
-
----
-
-## Product Master
-
-Contains:
-
-- SKU ID
-- Product Name
-- Brand
-- Category
-- Unit Price
-
-Records:
-150
-
----
-
-## Sales Transactions
-
-Contains:
-
-- Transaction Date
-- Distributor
-- Outlet
-- Product
-- Units Sold
-- Revenue
-- Cost
-- Profit
-
-Records:
-250,000+
-
----
-
-## Target Data
-
-Contains:
-
-- Monthly Targets
-- Revenue Targets
-- Volume Targets
-- Distributor Targets
-
-Records:
-7,200+
+Distributor targets are carried on `distributors.csv` (annual target) and used for the target-vs-actual views.
 
 ---
 
@@ -417,47 +351,12 @@ Leverage analytics and AI to identify trends, risks, and opportunities faster.
 
 ```text
 cpg-distributor-intelligence-platform/
-
-
-├── datasets/
-│   ├── distributor_master.csv
-│   ├── outlet_master.csv
-│   ├── product_master.csv
-│   ├── sales_transactions.csv
-│   ├── target_data.csv
-│   └── coverage_summary.csv
-
-├── screenshots/
-│   ├── executive-intelligence.png
-│   ├── distributor-intelligence.png
-│   ├── product-intelligence.png
-│   ├── regional-intelligence.png
-│   └── market-coverage.png
-
+├── index.html         # interactive platform demo (open in a browser)
+├── Screenshots.zip    # dashboard page exports (6 PNGs)
+├── Datasets.zip       # simulated datasets: distributors, outlets, products,
+│                      #   countries, calendar, transactions
 └── README.md
 ```
-
----
-
-# Deployment Guide
-
-## GitHub Pages
-
-1. Create a new GitHub repository
-2. Upload all project files
-3. Navigate to Settings → Pages
-4. Select:
-
-Deploy from Branch
-
-5. Choose:
-
-Main Branch
-Root Folder
-
-6. Save
-
-GitHub will generate a public URL for the platform.
 
 ---
 
